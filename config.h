@@ -79,6 +79,7 @@ static const char *nemocmd[]     = { "nemo", NULL };
 static const char *codecmd[]     = { "code", NULL };
 static const char *powercmd[]    = { "/home/rohan/.bin/power", NULL };
 static const char *rangercmd[]   = { "st", "-e", "ranger" , NULL };
+static const char *launchcmd[]   = { "/home/rohan/.bin/launch" , NULL };
 
 static Key keys[] = {
     /* modifier                     key         function        argument */
@@ -90,6 +91,7 @@ static Key keys[] = {
     { MODKEY,                       XK_f,       spawn,          {.v = nemocmd } },
     { MODKEY,                       XK_k,       spawn,          {.v = codecmd } },
     { MODKEY,                       XK_o,       spawn,          {.v = rangercmd } },
+    { MODKEY,                       XK_i,       spawn,          {.v = launchcmd } },
     { MODKEY|ShiftMask,             XK_t,       setlayout,      {.v = &layouts[0]} },
     { MODKEY|ShiftMask,             XK_f,       setlayout,      {.v = &layouts[1]} },
     { MODKEY,                       XK_Left,    shiftview,      {.i = -1 } },
