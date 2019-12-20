@@ -87,13 +87,13 @@ static const char *launchcmd[]   = { "/home/rohan/.bin/launch" , NULL };
 static Key keys[] = {
     /* modifier                     key         function        argument */
     { Mod1Mask,                     XK_q,       killclient,     {0} },
-    { MODKEY,                       XK_j,       spawn,          {.v = dmenucmd } },
+    { MODKEY,                       XK_k,       spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_l,       spawn,          {.v = j4dmenucmd } },
     { MODKEY,                       XK_p,       spawn,          {.v = powercmd } },
     { MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
     { MODKEY,                       XK_b,       spawn,          {.v = chromiumcmd } },
     { MODKEY,                       XK_f,       spawn,          {.v = nemocmd } },
-    { MODKEY,                       XK_k,       spawn,          {.v = codecmd } },
+    { MODKEY,                       XK_c,       spawn,          {.v = codecmd } },
     { MODKEY,                       XK_o,       spawn,          {.v = rangercmd } },
     { MODKEY,                       XK_i,       spawn,          {.v = launchcmd } },
     { MODKEY|ShiftMask,             XK_t,       setlayout,      {.v = &layouts[0]} },
