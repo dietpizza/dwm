@@ -27,11 +27,11 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8" };
 
 /* Rules for specific applications */
 static const Rule rules[] = {
-  /* class      instance    title       tags mask     iscentered     isfloating   monitor */
-    {"Gimp",       NULL,       NULL,       0,            0,             1,           -1 },
-    {"Uget-gtk",   NULL,       NULL,       1 << 7,       1,             0,           -1 },
-    {"st-256color",NULL,      "backup",    0,            1,             1,           -1 },
-    {"st-256color",NULL,      "nmtui",     0,            1,             1,           -1 },
+  /* class          instance    title       tags mask     iscentered     isfloating   monitor */
+    {"Gimp",        NULL,       NULL,       0,            0,             1,           -1 },
+    {"Uget-gtk",    NULL,       NULL,       1 << 7,       1,             0,           -1 },
+    {"qBittorrent", NULL,       NULL,       1 << 6,       1,             0,           -1 },
+    // {"st-256color", NULL,       NULL,       0,            1,             1,           -1 },
 };
 
 /* layout(s) */
@@ -87,13 +87,13 @@ static const char *launchcmd[]   = { "/home/rohan/.bin/launch" , NULL };
 static Key keys[] = {
     /* modifier                     key         function        argument */
     { Mod1Mask,                     XK_q,       killclient,     {0} },
-    { MODKEY,                       XK_j,       spawn,          {.v = dmenucmd } },
-    { MODKEY,                       XK_k,       spawn,          {.v = j4dmenucmd } },
+    { MODKEY,                       XK_l,       spawn,          {.v = dmenucmd } },
+    { MODKEY,                       XK_j,       spawn,          {.v = j4dmenucmd } },
     { MODKEY,                       XK_p,       spawn,          {.v = powercmd } },
     { MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
     { MODKEY,                       XK_b,       spawn,          {.v = chromiumcmd } },
     { MODKEY,                       XK_f,       spawn,          {.v = nemocmd } },
-    { MODKEY,                       XK_c,       spawn,          {.v = codecmd } },
+    { MODKEY,                       XK_k,       spawn,          {.v = codecmd } },
     { MODKEY,                       XK_o,       spawn,          {.v = rangercmd } },
     { MODKEY,                       XK_i,       spawn,          {.v = launchcmd } },
     { MODKEY|ShiftMask,             XK_t,       setlayout,      {.v = &layouts[0]} },
