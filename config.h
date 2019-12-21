@@ -27,11 +27,10 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8" };
 
 /* Rules for specific applications */
 static const Rule rules[] = {
-  /* class          instance    title       tags mask     iscentered     isfloating   monitor */
-    {"Gimp",        NULL,       NULL,       0,            0,             1,           -1 },
-    {"Uget-gtk",    NULL,       NULL,       1 << 7,       1,             0,           -1 },
-    {"qBittorrent", NULL,       NULL,       1 << 6,       1,             0,           -1 },
-    // {"st-256color", NULL,       NULL,       0,            1,             1,           -1 },
+  /* class          instance    title       tags mask     isfloating   monitor */
+    {"Gimp",        NULL,       NULL,       0,            1,           -1 },
+    {"Uget-gtk",    NULL,       NULL,       1 << 7,       0,           -1 },
+    {"qBittorrent", NULL,       NULL,       1 << 6,       0,           -1 },
 };
 
 /* layout(s) */
