@@ -31,6 +31,7 @@ static const Rule rules[] = {
     {"Gimp",        NULL,       NULL,       0,            1,           -1 },
     {"Uget-gtk",    NULL,       NULL,       1 << 7,       0,           -1 },
     {"qBittorrent", NULL,       NULL,       1 << 6,       0,           -1 },
+    {"XTerm",       NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -74,34 +75,34 @@ void shiftview(const Arg *arg) {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]    = { "dmenu_run", NULL };
-static const char *j4dmenucmd[]    = { "j4-dmenu-desktop", NULL };
-static const char *termcmd[]     = { "st", NULL };
-static const char *chromiumcmd[] = { "chromium","--force-dark-mode",  NULL };
-static const char *nemocmd[]     = { "nemo", NULL };
-static const char *codecmd[]     = { "code", NULL };
-static const char *powercmd[]    = { "/home/rohan/.bin/power", NULL };
-static const char *rangercmd[]   = { "st", "-e", "ranger" , NULL };
-static const char *launchcmd[]   = { "/home/rohan/.bin/launch" , NULL };
+static const char *j4dmenu[]     = { "j4-dmenu-desktop", NULL };
+static const char *termcmd[]     = { "alacritty", NULL };
+static const char *ranger[]      = { "alacritty", "-e", "ranger" , NULL };
+static const char *chromium[]    = { "chromium","--force-dark-mode",  NULL };
+static const char *nemo[]        = { "nemo", NULL };
+static const char *code[]        = { "code", NULL };
+static const char *urxvct[]      = { "urxvtc", NULL };
+static const char *power[]       = { "/home/rohan/.bin/power", NULL };
+static const char *launch[]      = { "/home/rohan/.bin/launch" , NULL };
 
 static Key keys[] = {
     /* modifier                     key         function        argument */
     { Mod1Mask,                     XK_q,       killclient,     {0} },
     { MODKEY,                       XK_l,       spawn,          {.v = dmenucmd } },
-    { MODKEY,                       XK_j,       spawn,          {.v = j4dmenucmd } },
-    { MODKEY,                       XK_p,       spawn,          {.v = powercmd } },
+    { MODKEY,                       XK_j,       spawn,          {.v = j4dmenu } },
+    { MODKEY,                       XK_p,       spawn,          {.v = power } },
+    { MODKEY,                       XK_u,       spawn,          {.v = urxvct } },
     { MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_b,       spawn,          {.v = chromiumcmd } },
-    { MODKEY,                       XK_f,       spawn,          {.v = nemocmd } },
-    { MODKEY,                       XK_k,       spawn,          {.v = codecmd } },
-    { MODKEY,                       XK_o,       spawn,          {.v = rangercmd } },
-    { MODKEY,                       XK_i,       spawn,          {.v = launchcmd } },
-    { MODKEY|ShiftMask,             XK_t,       setlayout,      {.v = &layouts[0]} },
-    { MODKEY|ShiftMask,             XK_f,       setlayout,      {.v = &layouts[1]} },
+    { MODKEY,                       XK_b,       spawn,          {.v = chromium } },
+    { MODKEY,                       XK_f,       spawn,          {.v = nemo } },
+    { MODKEY,                       XK_k,       spawn,          {.v = code } },
+    { MODKEY,                       XK_o,       spawn,          {.v = ranger } },
+    { MODKEY,                       XK_i,       spawn,          {.v = launch } },
     { MODKEY,                       XK_Left,    shiftview,      {.i = -1 } },
     { MODKEY,                       XK_Right,   shiftview,      {.i = +1 } },
     { MODKEY,                       XK_Tab,     focusstack,     {.i = +1 } },
-    //{ MODKEY,                       XK_Up,      incnmaster,     {.i = +1 } },
-    //{ MODKEY,                       XK_Down,    incnmaster,     {.i = -1 } },
+    // { MODKEY,                       XK_Up,      incnmaster,     {.i = +1 } },
+    // { MODKEY,                       XK_Down,    incnmaster,     {.i = -1 } },
     { MODKEY,                       XK_comma,   setmfact,       {.f = -0.01} },
     { MODKEY,                       XK_period,  setmfact,       {.f = +0.01} },
     { MODKEY,                       XK_m,       zoom,           {0} },
