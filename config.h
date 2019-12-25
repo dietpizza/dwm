@@ -82,8 +82,8 @@ static const char *chromium[]    = { "chromium","--force-dark-mode",  NULL };
 static const char *nemo[]        = { "nemo", NULL };
 static const char *code[]        = { "code", NULL };
 static const char *urxvct[]      = { "urxvtc", NULL };
-static const char *power[]       = { "/home/rohan/.bin/power", NULL };
-static const char *launch[]      = { "/home/rohan/.bin/launch" , NULL };
+static const char *power[]       = { "/home/rohan/.config/.bin/power", NULL };
+static const char *launch[]      = { "/home/rohan/.config/.bin/launch" , NULL };
 
 static Key keys[] = {
     /* modifier                     key         function        argument */
