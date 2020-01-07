@@ -1,5 +1,5 @@
 /* appearance */
-static const unsigned int borderpx  = 1;
+static const unsigned int borderpx  = 2;
 static const unsigned int snap      = 32;
 static const unsigned int gappih    = 10;
 static const unsigned int gappiv    = 10;
@@ -10,10 +10,12 @@ static const int showbar            = 1;
 static const int topbar             = 1; 
 static const int horizpadbar        = 1;
 static const int vertpadbar         = 1;
-static const char *fonts[]          = { "xos4 Terminus:size=9" };
+static const unsigned int baralpha = 0xc0;
+static const unsigned int borderalpha = 0xc0;
+static const char *fonts[]          = { "Terminus:size=9" };
 static const char col_gray1[]       = "#002b36";
 static const char col_gray2[]       = "#073642";
-static const char col_gray3[]       = "#839496";
+static const char col_gray3[]       = "#93a1a1";
 static const char col_gray4[]       = "#eee8d5";
 static const char col_cyan[]        = "#268bd2";
 static const char *colors[][3]      = {
@@ -21,7 +23,11 @@ static const char *colors[][3]      = {
                                           [SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
                                           [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
                                       };
-
+static const unsigned int alphas[][3]      = {
+	/*               fg      bg        border     */
+	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+};
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8" };
 
@@ -75,13 +81,12 @@ void shiftview(const Arg *arg) {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]    = { "dmenu_run", NULL };
-static const char *j4dmenu[]     = { "j4-dmenu-desktop", NULL };
-static const char *termcmd[]     = { "alacritty", NULL };
-static const char *ranger[]      = { "alacritty", "-e", "ranger" , NULL };
+static const char *termcmd[]     = { "st", NULL };
+static const char *ranger[]      = { "st", "-e", "ranger" , NULL };
 static const char *chromium[]    = { "chromium","--force-dark-mode",  NULL };
 static const char *nemo[]        = { "nemo", NULL };
-static const char *code[]        = { "code", NULL };
-static const char *urxvct[]      = { "urxvtc", NULL };
+static const char *scrot[]       = { "scrot", NULL };
+static const char *codium[]      = { "codium", NULL };
 static const char *power[]       = { "/home/rohan/.config/.bin/power", NULL };
 static const char *launch[]      = { "/home/rohan/.config/.bin/launch" , NULL };
 
@@ -89,14 +94,13 @@ static Key keys[] = {
     /* modifier                     key         function        argument */
     { Mod1Mask,                     XK_q,       killclient,     {0} },
     { MODKEY,                       XK_l,       spawn,          {.v = dmenucmd } },
-    { MODKEY,                       XK_j,       spawn,          {.v = j4dmenu } },
     { MODKEY,                       XK_p,       spawn,          {.v = power } },
-    { MODKEY,                       XK_u,       spawn,          {.v = urxvct } },
     { MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_b,       spawn,          {.v = chromium } },
+    { MODKEY,                       XK_b,       spawn,          {.v = chromium} },
     { MODKEY,                       XK_f,       spawn,          {.v = nemo } },
-    { MODKEY,                       XK_k,       spawn,          {.v = code } },
+    { MODKEY,                       XK_k,       spawn,          {.v = codium } },
     { MODKEY,                       XK_o,       spawn,          {.v = ranger } },
+    { MODKEY,                       XK_s,       spawn,          {.v = scrot } },
     { MODKEY,                       XK_i,       spawn,          {.v = launch } },
     { MODKEY,                       XK_Left,    shiftview,      {.i = -1 } },
     { MODKEY,                       XK_Right,   shiftview,      {.i = +1 } },
