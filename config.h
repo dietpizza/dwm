@@ -1,5 +1,5 @@
 /* appearance */
-static const unsigned int borderpx  = 1;
+static const unsigned int borderpx  = 0;
 static const unsigned int snap      = 32;
 static const unsigned int gappih    = 10;
 static const unsigned int gappiv    = 10;
@@ -16,8 +16,8 @@ static const char *fonts[]          = { "Terminus:size=9" };
 static const char col_gray1[]       = "#002b36";
 static const char col_gray2[]       = "#073642";
 static const char col_gray3[]       = "#93a1a1";
-static const char col_gray4[]       = "#eee8d5";
-static const char col_cyan[]        = "#586e75";
+static const char col_gray4[]       = "#fdf6e3";
+static const char col_cyan[]        = "#073642";
 static const char *colors[][3]      = {
 /*                                                       fg         bg         border   */
                                           [SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
