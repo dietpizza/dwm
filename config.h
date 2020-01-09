@@ -16,7 +16,7 @@ static const char *fonts[]          = { "Terminus:size=9" };
 static const char col_gray1[]       = "#002b36";
 static const char col_gray2[]       = "#073642";
 static const char col_gray3[]       = "#93a1a1";
-static const char col_gray4[]       = "#fdf6e3";
+static const char col_gray4[]       = "#eee8d5";
 static const char col_cyan[]        = "#002b36";
 static const char *colors[][3]      = {
 /*                                                       fg         bg         border   */
@@ -81,9 +81,9 @@ void shiftview(const Arg *arg) {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]    = { "dmenu_run", NULL };
-static const char *termcmd[]     = { "st", NULL };
-static const char *ranger[]      = { "st", "-e", "ranger" , NULL };
-static const char *qutebrowser[] = { "qutebrowser",  NULL };
+static const char *termcmd[]     = { "alacritty", NULL };
+static const char *ranger[]      = { "alacritty", "-e", "ranger" , NULL };
+static const char *chrome[]      = { "google-chrome","--force-dark-mode" ,  NULL };
 static const char *nemo[]        = { "nemo", NULL };
 static const char *scrot[]       = { "scrot", NULL };
 static const char *codium[]      = { "codium", NULL };
@@ -96,7 +96,7 @@ static Key keys[] = {
     { MODKEY,                       XK_l,       spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_p,       spawn,          {.v = power } },
     { MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_b,       spawn,          {.v = qutebrowser } },
+    { MODKEY,                       XK_b,       spawn,          {.v = chrome } },
     { MODKEY,                       XK_f,       spawn,          {.v = nemo } },
     { MODKEY,                       XK_k,       spawn,          {.v = codium } },
     { MODKEY,                       XK_o,       spawn,          {.v = ranger } },
