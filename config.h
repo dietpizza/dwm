@@ -1,5 +1,5 @@
 /* appearance */
-static const unsigned int borderpx  = 2;
+static const unsigned int borderpx  = 1;
 static const unsigned int snap      = 32;
 static const unsigned int gappih    = 10;
 static const unsigned int gappiv    = 10;
@@ -37,7 +37,7 @@ static const Rule rules[] = {
     {"Gimp",        NULL,       NULL,       0,            1,           -1 },
     {"Uget-gtk",    NULL,       NULL,       1 << 7,       0,           -1 },
     {"qBittorrent", NULL,       NULL,       1 << 6,       0,           -1 },
-    {"XTerm",       NULL,       NULL,       0,            1,           -1 },
+    {"Alacritty",       NULL,       "Floating",       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -83,7 +83,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]    = { "dmenu_run", NULL };
 static const char *termcmd[]     = { "alacritty", NULL };
 static const char *ranger[]      = { "alacritty", "-e", "ranger" , NULL };
-static const char *chrome[]      = { "google-chrome","--force-dark-mode" ,  NULL };
+static const char *qutebrowser[] = { "qutebrowser" ,  NULL };
 static const char *nemo[]        = { "nemo", NULL };
 static const char *scrot[]       = { "scrot", NULL };
 static const char *codium[]      = { "codium", NULL };
@@ -96,7 +96,7 @@ static Key keys[] = {
     { MODKEY,                       XK_l,       spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_p,       spawn,          {.v = power } },
     { MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_b,       spawn,          {.v = chrome } },
+    { MODKEY,                       XK_b,       spawn,          {.v = qutebrowser } },
     { MODKEY,                       XK_f,       spawn,          {.v = nemo } },
     { MODKEY,                       XK_k,       spawn,          {.v = codium } },
     { MODKEY,                       XK_o,       spawn,          {.v = ranger } },
