@@ -1,5 +1,5 @@
 /* appearance */
-static const unsigned int borderpx  = 1;
+static const unsigned int borderpx  = 2;
 static const unsigned int snap      = 32;
 static const unsigned int gappih    = 10;
 static const unsigned int gappiv    = 10;
