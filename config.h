@@ -1,5 +1,5 @@
 /* appearance */
-static const unsigned int borderpx  = 1;
+static const unsigned int borderpx  = 0;
 static const unsigned int snap      = 32;
 static const unsigned int gappih    = 10;
 static const unsigned int gappiv    = 10;
@@ -12,12 +12,12 @@ static const int horizpadbar        = 1;
 static const int vertpadbar         = 1;
 static const unsigned int baralpha = 0xff;
 static const unsigned int borderalpha = 0xff;
-static const char *fonts[]          = { "Terminus:size=9" };
+static const char *fonts[]          = { "xos4 Terminus:size=9" };
 static const char col_gray1[]       = "#002b36";
 static const char col_gray2[]       = "#073642";
 static const char col_gray3[]       = "#93a1a1";
 static const char col_gray4[]       = "#eee8d5";
-static const char col_cyan[]        = "#268bd2";
+static const char col_cyan[]        = "#002b36";
 static const char *colors[][3]      = {
 /*                                                       fg         bg         border   */
                                           [SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
@@ -37,7 +37,7 @@ static const Rule rules[] = {
     {"Gimp",        NULL,       NULL,       0,            1,           -1 },
     {"Uget-gtk",    NULL,       NULL,       1 << 7,       0,           -1 },
     {"qBittorrent", NULL,       NULL,       1 << 6,       0,           -1 },
-    {"Alacritty",   NULL,       "Floating", 0,            1,           -1 },
+    {"Alacritty",   NULL,       "Dialog",   0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -83,7 +83,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]    = { "dmenu_run", NULL };
 static const char *termcmd[]     = { "alacritty", NULL };
 static const char *ranger[]      = { "alacritty", "-e", "ranger" , NULL };
-static const char *qutebrowser[] = { "qutebrowser" ,  NULL };
+static const char *browser[]     = { "google-chrome-stable", "--force-dark-mode" ,  NULL };
 static const char *nemo[]        = { "nemo", NULL };
 static const char *scrot[]       = { "scrot", NULL };
 static const char *codium[]      = { "codium", NULL };
@@ -96,7 +96,7 @@ static Key keys[] = {
     { MODKEY,                       XK_l,       spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_p,       spawn,          {.v = power } },
     { MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_b,       spawn,          {.v = qutebrowser } },
+    { MODKEY,                       XK_b,       spawn,          {.v = browser } },
     { MODKEY,                       XK_f,       spawn,          {.v = nemo } },
     { MODKEY,                       XK_k,       spawn,          {.v = codium } },
     { MODKEY,                       XK_o,       spawn,          {.v = ranger } },
