@@ -81,10 +81,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]    = { "dmenu_run", NULL };
 static const char *termcmd[]     = { "alacritty", NULL };
 static const char *ranger[]      = { "alacritty", "-e", "ranger" , NULL };
-static const char *browser[]     = { "google-chrome-stable", "--force-dark-mode" ,  NULL };
+static const char *browser[]     = { "google-chrome-stable", "--force-dark-mode" , "-enable-features=OverlayScrollbar,OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter" ,  NULL };
 static const char *nemo[]        = { "nemo", NULL };
 static const char *scrot[]       = { "scrot", NULL };
 static const char *codium[]      = { "codium", NULL };
+static const char *j4dmenu[]     = { "j4-dmenu-desktop", NULL };
+static const char *crunch[]      = { "speedcrunch", NULL };
 static const char *power[]       = { "/home/rohan/.config/.bin/power", NULL };
 static const char *launch[]      = { "/home/rohan/.config/.bin/launch" , NULL };
 
@@ -97,6 +99,8 @@ static Key keys[] = {
     { MODKEY,                       XK_b,       spawn,          {.v = browser } },
     { MODKEY,                       XK_f,       spawn,          {.v = nemo } },
     { MODKEY,                       XK_k,       spawn,          {.v = codium } },
+    { MODKEY,                       XK_j,       spawn,          {.v = j4dmenu } },
+    { MODKEY,                       XK_c,       spawn,          {.v = crunch } },
     { MODKEY,                       XK_o,       spawn,          {.v = ranger } },
     { MODKEY,                       XK_s,       spawn,          {.v = scrot } },
     { MODKEY,                       XK_i,       spawn,          {.v = launch } },
