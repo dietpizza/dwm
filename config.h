@@ -12,7 +12,7 @@ static const int horizpadbar = 1;
 static const int vertpadbar = 1;
 static const unsigned int baralpha = 0xff;
 static const unsigned int borderalpha = 0xff;
-static const char *fonts[] = {"xos4 Terminus:size=9"};
+static const char *fonts[] = {"Terminus:size=9"};
 static const char col_gray1[] = "#002b36";
 static const char col_gray2[] = "#073642";
 static const char col_gray3[] = "#93a1a1";
@@ -86,11 +86,8 @@ static const char *dmenucmd[] = {"dmenu_run", NULL};
 static const char *termcmd[] = {"alacritty", NULL};
 static const char *ranger[] = {"alacritty", "-e", "ranger", NULL};
 static const char *browser[] = {"chromium", NULL};
-static const char *pcmanfm[] = {"pcmanfm", NULL};
 static const char *scrot[] = {"scrot", NULL};
-static const char *codium[] = {"code", NULL};
-static const char *j4dmenu[] = {"j4-dmenu-desktop", NULL};
-static const char *crunch[] = {"speedcrunch", NULL};
+static const char *code[] = {"code", NULL};
 static const char *power[] = {"/home/rohan/.config/.bin/power", NULL};
 static const char *launch[] = {"/home/rohan/.config/.bin/launch", NULL};
 
@@ -101,10 +98,7 @@ static Key keys[] = {
     {MODKEY, XK_p, spawn, {.v = power}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
     {MODKEY, XK_b, spawn, {.v = browser}},
-    {MODKEY, XK_f, spawn, {.v = pcmanfm}},
-    {MODKEY, XK_k, spawn, {.v = codium}},
-    {MODKEY, XK_j, spawn, {.v = j4dmenu}},
-    {MODKEY, XK_c, spawn, {.v = crunch}},
+    {MODKEY, XK_k, spawn, {.v = code}},
     {MODKEY, XK_o, spawn, {.v = ranger}},
     {MODKEY, XK_s, spawn, {.v = scrot}},
     {MODKEY, XK_i, spawn, {.v = launch}},
