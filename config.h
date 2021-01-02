@@ -1,5 +1,5 @@
 /* appearance */
-static const unsigned int borderpx = 0;
+static const unsigned int borderpx = 2;
 static const unsigned int snap = 32;
 static const unsigned int gappih = 10;
 static const unsigned int gappiv = 10;
@@ -8,8 +8,8 @@ static const unsigned int gappov = 10;
 static const int smartgaps = 0;
 static const int showbar = 1;
 static const int topbar = 1;
-static const int horizpadbar = 1;
-static const int vertpadbar = 1;
+static const int horizpadbar = 5;
+static const int vertpadbar = 5;
 static const unsigned int baralpha = 0xff;
 static const unsigned int borderalpha = 0xff;
 static const char *fonts[] = {"Terminus:size=9"};
