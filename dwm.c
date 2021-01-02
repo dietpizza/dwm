@@ -1586,7 +1586,7 @@ void setup(void)
     if (!drw_fontset_create(drw, fonts, LENGTH(fonts)))
         die("no fonts could be loaded.");
     lrpad = drw->fonts->h;
-    bh = drw->fonts->h + 2;
+    bh = barpx ? barpx : drw->fonts->h + 2;
     updategeom();
     /* init atoms */
     utf8string = XInternAtom(dpy, "UTF8_STRING", False);
@@ -1633,6 +1633,9 @@ void setup(void)
     XSelectInput(dpy, root, wa.event_mask);
     grabkeys();
     focus(NULL);
+    if(autostart != NULL)
+      if(strlen(autostart) > 0)
+        system(autostart);
 }
 
 void seturgent(Client *c, int urg)
